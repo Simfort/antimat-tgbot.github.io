@@ -8,8 +8,11 @@ bot.api.setMyCommands([
 bot.command('start', async (ctx) => {
     await ctx.reply('Приветсвую меня зовут @NewBotSim');
 });
-bot.hears([/блять/, /сука/, /ебан/, /гондон/, /хуй/, /пизда/], async (ctx) => {
+bot.hears([/бля/, /сука/, /ебан/, /гондон/, /хуй/, /пизда/], async (ctx) => {
     await bot.api.deleteMessage(ctx.chat.id, ctx.msgId);
-    await ctx.reply(`${ctx.from.first_name} не матерись!`);
+    await ctx.reply(`@${ctx.from.username} не матерись!`);
 });
+bot.hears([/тёма/, /тема/, /артем/], async (ctx) => {
+    await ctx.reply('Тема крутой !')
+})
 bot.start();
